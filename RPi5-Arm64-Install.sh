@@ -1,6 +1,6 @@
 RPI_STATIC_IP="192.168.11.101" # edit me
-RPI_GATEWAY_IP="192.168.11.1" # edit me
-RPI_HOSTNAME="pi5-prox-node1"     # edit me
+RPI_GATEWAY_IP="192.168.11.1"  # edit me
+RPI_HOSTNAME="pi5-prox-node1"  # edit me
 
 # password reset
 passwd
@@ -24,8 +24,7 @@ iface vmbr0 inet static
         gateway $RPI_GATEWAY_IP
         bridge-ports eth0
         bridge-stp off
-        bridge-fd 0 \n" > /etc/network/interfaces.new
-
+        bridge-fd 0 \n" >>/etc/network/interfaces
 
 # prepare for Proxmox VE installation
 echo 'deb [arch=arm64] https://mirrors.apqa.cn/proxmox/debian/pve bookworm port' >/etc/apt/sources.list.d/pveport.list

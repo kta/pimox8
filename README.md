@@ -3,7 +3,7 @@ This repository is the simplest script to install Proxmox on Raspberry Pi5.
 So, I plan to modify the script to be easy to install, like pimox7.
 
 
-# Pimox8 - Proxmox V7 for the Raspberry Pi
+# Pimox8 - Proxmox V8 for the Raspberry Pi 5
 Pimox is a port of Proxmox to the Raspberry Pi allowing you to build a Proxmox cluster of Rapberry Pi's or even a hybrid cluster of Pis and x86 hardware.
 
 Requirements
