@@ -20,7 +20,7 @@ iface eth0 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-        address $RPI_STATIC_IP
+        address $RPI_STATIC_IP/24
         gateway $RPI_GATEWAY_IP
         bridge-ports eth0
         bridge-stp off
