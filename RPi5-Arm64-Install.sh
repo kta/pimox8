@@ -3,6 +3,7 @@ RPI_GATEWAY_IP="192.168.11.1"  # edit me
 RPI_HOSTNAME="pi5-prox-node1"  # edit me
 
 # password reset
+echo '----- update password -----'
 passwd
 
 # apt update, upgrade
