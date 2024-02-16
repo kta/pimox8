@@ -1,6 +1,6 @@
 RPI_STATIC_IP="192.168.11.101" # edit me
 RPI_GATEWAY_IP="192.168.11.1"  # edit me
-RPI_HOSTNAME="pi5-prox-node1"  # edit me
+RPI_HOSTNAME="pve-node1"       # edit me
 
 # password reset
 echo '----- update password -----'
@@ -28,17 +28,20 @@ iface vmbr0 inet static
         bridge-fd 0 \n" >>/etc/network/interfaces
 
 # prepare for Proxmox VE installation
-echo 'deb [arch=arm64] https://mirrors.apqa.cn/proxmox/debian/pve bookworm port' >/etc/apt/sources.list.d/pveport.list
-curl https://mirrors.apqa.cn/proxmox/debian/pveport.gpg -o /etc/apt/trusted.gpg.d/pveport.gpg
-apt update && apt full-upgrade -y
+echo 'deb [arch=arm64] https://mirrors.apqa.cn/proxmox/debian/pve bookworm port'>/etc/apt/sources.list.d/pveport.list
+
+
+curl https://mirrors.apqa.cn/proxmox/debian/pveport.gpg -o /etc/apt/trusted.gpg.d/pveport.gpg 
+
+apt update && apt full-upgrade
 
 # Install Proxmox VE packages
-apt install ifupdown2 -y
-apt install proxmox-ve postfix open-iscsi -y
-
+apt install -y ifupdown2
+apt install -y proxmox-ve postfix open-iscsi
 # setting OVMF
 apt download pve-edk2-firmware-aarch64=3.20220526-rockchip
 dpkg -i pve-edk2-firmware-aarch64_3.20220526-rockchip_all.deb
+
 apt update && apt full-upgrade -y
 
 # update kernel pagesize
