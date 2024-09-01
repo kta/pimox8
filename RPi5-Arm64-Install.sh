@@ -38,9 +38,10 @@ apt update && apt full-upgrade
 # Install Proxmox VE packages
 apt install -y ifupdown2
 apt install -y proxmox-ve postfix open-iscsi
-# setting OVMF
-apt download pve-edk2-firmware-aarch64=3.20220526-rockchip
-dpkg -i pve-edk2-firmware-aarch64_3.20220526-rockchip_all.deb
+
+# setting OVMF 
+# apt download pve-edk2-firmware-aarch64=3.20220526-rockchip
+# dpkg -i pve-edk2-firmware-aarch64_3.20220526-rockchip_all.deb
 
 apt update && apt full-upgrade -y
 
