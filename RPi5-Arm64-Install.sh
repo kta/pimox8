@@ -28,10 +28,10 @@ iface vmbr0 inet static
         bridge-fd 0 \n" >>/etc/network/interfaces
 
 # prepare for Proxmox VE installation
-echo 'deb [arch=arm64] https://mirrors.apqa.cn/proxmox/debian/pve bookworm port'>/etc/apt/sources.list.d/pveport.list
+echo 'deb [arch=arm64] https://de.mirrors.apqa.cn/proxmox/debian/pve bookworm port'>/etc/apt/sources.list.d/pveport.list
 
 
-curl -L https://mirrors.apqa.cn/proxmox/debian/pveport.gpg -o /etc/apt/trusted.gpg.d/pveport.gpg 
+curl -L https://de.mirrors.apqa.cn/proxmox/debian/pveport.gpg -o /etc/apt/trusted.gpg.d/pveport.gpg 
 
 apt update && apt full-upgrade
 
